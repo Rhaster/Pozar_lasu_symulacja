@@ -1,0 +1,6 @@
+Otworzyć folder projektu
+
+wkleić do konsoli: 
+pip install matplotlib==3.8.3 numpy==1.26.4 Pillow==10.2.0 reportlab==4.2.5
+
+uruchomić aplikacja.py
