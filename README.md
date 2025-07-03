@@ -59,4 +59,4 @@ Projekt może służyć jako:
 ---
 
 > **Licencja:** MIT  
-> **Kontakt:** pawel.deptula.dev (at) example.com
+> **Kontakt:** https://www.linkedin.com/in/pawe%C5%82-deptu%C5%82a/
