@@ -1,13 +1,62 @@
-Symulacja pożaru lasu
-Opis projektu
-Aplikacja została napisana w Pythonie z wykorzystaniem biblioteki Tkinter i służy do symulacji rozprzestrzeniania się pożaru lasu. Jej celem jest umożliwienie obserwacji, jak ogień zachowuje się w środowisku leśnym pod wpływem różnych czynników oraz parametrów. Symulacja odzwierciedla proces zapalania się drzew, rozchodzenia ognia po lesie oraz wygasania pożaru, uwzględniając m.in. wpływ wiatru, prawdopodobieństwo samozapłonu (np. od uderzenia pioruna) czy nawet pojawienie się lawy wywołującej pożar. Aplikacja pozwala dostosować warunki początkowe i przebieg symulacji, dzięki czemu użytkownik może przeprowadzać eksperymenty i analizować różne scenariusze pożaru. Całość jest prezentowana w graficznym interfejsie, który obrazowo ukazuje dynamikę pożaru oraz umożliwia śledzenie statystyk w trakcie trwania symulacji.
-Główne funkcjonalności
-Do głównych funkcjonalności aplikacji należą:
-Symulacja rozprzestrzeniania się ognia w lesie: Program imituje zachowanie ognia przemieszczającego się z drzewa na drzewo w kolejnych krokach (iteracjach) symulacji. Płonące drzewo może podpalić sąsiadujące drzewa zgodnie z określonym prawdopodobieństwem, a po wypaleniu zamienia się w spalony teren (puste pole). Symulacja trwa iteracyjnie aż do momentu wygaśnięcia ognia lub osiągnięcia zadanego limitu iteracji, odzwierciedlając cykl pożaru od wybuchu aż po całkowite wypalenie obszaru.
-Konfigurowalne parametry symulacji: Użytkownik może dostosować wiele parametrów wpływających na przebieg pożaru. Przykładowe ustawienia obejmują: prawdopodobieństwo zapłonu drzewa od płonącego sąsiada, szansę na samozapłon drzewa (np. od uderzenia pioruna), kierunek wiatru oraz siłę jego wpływu na ogień, częstotliwość zmiany kierunku wiatru, a także parametry regeneracji drzew (czas po jakim spalone miejsce może się zazielenić ponownie i prawdopodobieństwo odrodzenia drzewa). Dodatkowo można określić warunki początkowe lasu, takie jak procentowe udziały różnych typów terenu (gęstość drzew, odsetek pustych pól, obecność wody i lawy na starcie symulacji). Dzięki tak szerokiej konfiguracji możliwe jest przeprowadzenie różnych scenariuszy pożaru i obserwacja, jak zmiany warunków wpływają na dynamikę ognia.
-Różnorodne elementy środowiska: Symulowany las składa się z kilku typów pól, co czyni model bardziej realistycznym i złożonym. Oprócz zwykłych drzew i pustych obszarów, w środowisku występują woda (jeziora, rzeki) oraz lawa. Woda stanowi naturalną barierę dla ognia – pożar nie rozprzestrzenia się na pola wodne. Lawa natomiast reprezentuje np. erupcję wulkaniczną i może pojawiać się w trakcie symulacji, powodując natychmiastowe podpalenie sąsiadujących drzew. Uwzględnienie tych elementów pozwala symulować zjawiska takie jak pożar wywołany erupcją oraz sprawia, że przebieg symulacji staje się bardziej urozmaicony (ognień może wygasać przy zbiornikach wodnych lub gwałtownie wybuchać w pobliżu lawy).
-Śledzenie statystyk i wyniki symulacji: Aplikacja na bieżąco gromadzi dane o przebiegu pożaru, co umożliwia późniejszą analizę. W każdej iteracji zliczana jest m.in. liczba zdrowych drzew, płonących drzew, drzew już spalonych, a także obecny zasięg ognia czy obszar objęty pożarem. Na podstawie tych danych program umożliwia wygenerowanie raportu końcowego oraz wykresu ilustrującego zmiany zachodzące w czasie trwania pożaru. Użytkownik może dzięki temu łatwo zobaczyć, jak rozwijał się pożar – np. poznać maksymalną intensywność (szczytową liczbę jednocześnie płonących drzew) lub łączny rozmiar spalonych obszarów – i porównać wyniki między różnymi ustawieniami symulacji.
-Interfejs graficzny
-Zrzut ekranu interfejsu aplikacji podczas symulacji pożaru lasu. Interfejs został zbudowany w oparciu o bibliotekę Tkinter i składa się z panelu kontrolnego oraz obszaru wizualizacji. Panel po prawej stronie okna aplikacji umożliwia ustawienie wszystkich parametrów wejściowych symulacji przed jej rozpoczęciem (wartości numeryczne można wprowadzać dla każdego z opisanych wyżej parametrów, takich jak prawdopodobieństwa zdarzeń, czasy odnowy czy proporcje poszczególnych typów pól). Lewa część okna wyświetla animowaną siatkę lasu, gdzie każda komórka reprezentuje fragment terenu. Stan każdej komórki zobrazowany jest odpowiednim kolorem lub symbolem – zielone elementy mogą oznaczać żywe drzewa, czerwone płomienie to płonące drzewa, czarne lub szare pola przedstawiają spalony teren, niebieskie pola to woda, a pomarańczowe oznaczają lawę. Widok siatki jest aktualizowany w każdej iteracji, dzięki czemu użytkownik może obserwować rozprzestrzenianie się ognia w czasie. Interfejs zawiera również przyciski do sterowania przebiegiem symulacji. Użytkownik może jednym kliknięciem rozpocząć symulację, która będzie następnie automatycznie przebiegać iteracja po iteracji aż do zakończenia (wygaśnięcia ognia lub osiągnięcia maksymalnej liczby iteracji). W trakcie działania symulacji wyświetlane są na bieżąco informacje o aktualnej iteracji – m.in. liczba drzew w poszczególnych stanach (zdrowe, płonące, spalone), aktualny kierunek wiatru oraz inne istotne statystyki. Po zatrzymaniu symulacji dostępne są przyciski "Następna iteracja" i "Poprzednia iteracja", a także suwak, które umożliwiają przeglądanie stanu lasu krok po kroku, poruszając się między kolejnymi etapami pożaru. Dodatkowo, po zakończeniu symulacji użytkownik może wygenerować wykres prezentujący przebieg pożaru w czasie (np. zmianę liczby płonących drzew w kolejnych iteracjach) oraz raport podsumowujący całość – zawierający zestawienie ustawionych parametrów oraz zbiorcze statystyki (takie jak łączna liczba spalonych drzew, czas trwania pożaru itp.). Taki graficzno-tekstowy raport pozwala na łatwe przeanalizowanie rezultatów symulacji i wyciągnięcie wniosków co do wpływu poszczególnych czynników na rozwój pożaru.
-Autor
-Paweł Deptuła
+# 🌲🔥 Symulacja pożaru lasu
+
+![Zrzut ekranu aplikacji](docs/screenshot.png)
+
+> **Autor:** Paweł Deptuła  
+> **Technologie:** Python 3 · Tkinter · NumPy · Matplotlib · ReportLab
+
+---
+
+## 📝 Opis projektu
+
+Projekt przedstawia graficzną symulację rozprzestrzeniania się pożaru w środowisku leśnym.  
+Użytkownik może w czasie rzeczywistym obserwować, jak ogień przechodzi z drzewa na drzewo, wchodzi w interakcję z elementami otoczenia (wodą, lawą) oraz jak zmienia go wiatr.  
+Aplikacja pozwala swobodnie eksperymentować z parametrami, by analizować wpływ różnych czynników na dynamikę pożaru.
+
+---
+
+## ⚙️ Główne funkcjonalności
+
+|        | Opis |
+| ------ | ---- |
+| 🔥 **Dynamiczna symulacja ognia** | Płonące drzewa podpalają sąsiadów zgodnie z ustalonym prawdopodobieństwem; po wypaleniu stają się pogorzeliskiem. |
+| 🌳 **Pełna konfiguracja parametrów** | Pola wejściowe pozwalają ustawić m.in. prawdopodobieństwo zapłonu (_od sąsiada, od lawy, samozapłon_), częstotliwość zmiany wiatru, czas regeneracji drzew czy proporcje las / woda / lawa. |
+| 🌋 **Erupcje lawy** | Losowe wybuchy lawy inicjują nowe ogniska pożaru i dodają dynamiki symulacji. |
+| 💧 **Woda jako bariera** | Zbiorniki wodne blokują rozprzestrzenianie się ognia, wprowadzając dodatkową strategię w planowaniu lasu. |
+| 💨 **Wiatr z kierunkiem i siłą** | Kierunek wiatru (zmienny w trakcie symulacji) wzmacnia pożar zgodnie z ustalonym mnożnikiem. |
+| 📈 **Statystyki w czasie rzeczywistym** | Liczba pustych pól, żywych \& płonących drzew, wody, lawy itd. odświeżana co iterację. |
+| 🖼 **Interaktywna oś czasu** | Suwak + przyciski _Poprzednia_/ _Następna iteracja_ pozwalają „przewijać” przebieg pożaru klatka po klatce i analizować konkretne stany siatki. |
+| 🗂 **Generowanie raportu PDF** | Jednym kliknięciem tworzony jest raport zawierający: parametry startowe, wyniki końcowe, wykres zmian w czasie oraz zrzut ekranu. |
+
+---
+
+## 🖥️ Interfejs graficzny
+
+- **Panel parametrów (prawy bok):**  
+  Wprowadzanie wartości liczbowych (entry boxy) + przycisk `Rozpocznij symulację`.
+- **Wizualizacja siatki (lewa strona):**  
+  - zielone 🌳 = drzewa  
+  - czerwone 🔥 = płonące drzewa  
+  - czarne ⬛ = spalone drzewa / pogorzelisko  
+  - niebieskie 💧 = woda  
+  - pomarańczowe 🌋 = lawa  
+- **Podgląd iteracji (dół):**  
+  Informacje tekstowe + suwak czasu + przyciski do ręcznego przeglądania klatek.
+- **Raport i wykresy:**  
+  Po zakończeniu symulacji aktywuje się przycisk `Wygeneruj raport`, tworzący PDF z podsumowaniem i obrazami.
+
+---
+
+## 🎯 Cel projektu
+
+Celem jest edukacyjne przedstawienie zjawiska pożaru lasu oraz możliwości jego modelowania w prostym środowisku symulacyjnym.  
+Projekt może służyć jako:
+
+1. **Narzędzie dydaktyczne** – pokazujące wpływ czynników środowiskowych na rozwój ognia.  
+2. **Podstawa do dalszych badań** – łatwo rozszerzyć o nowe reguły lub elementy (np. różne gatunki drzew, straż pożarną).  
+3. **Prezentacja możliwości Tkintera** – demonstracja tworzenia interaktywnych, bogatych graficznie aplikacji w czystym Pythonie.
+
+---
+
+> **Licencja:** MIT  
+> **Kontakt:** pawel.deptula.dev (at) example.com
